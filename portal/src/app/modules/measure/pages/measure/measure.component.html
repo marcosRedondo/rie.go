@@ -1,0 +1,71 @@
+<div class="container-fluid">
+    <div class="row text-center border-bottom">
+        <div class="col">id</div>
+        <div class="col">date</div>
+        <div class="col">value</div>
+        <div class="col">units</div>
+        <div class="col">type</div>
+        <div class="col">sensor</div>
+        <div class="col">author</div>
+        <div class="col">&nbsp;</div>
+    </div>
+    <div class="row text-center border-bottom">
+        <div class="col">
+            <input type="text" class="form-control" disabled [(ngModel)]="newMeasure.id">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.date">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.value">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.units">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.type">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.sensor">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newMeasure.author">
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success m-1" (click)="saveMeasure(newMeasure)">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <div class="row text-center border-bottom" *ngFor="let m of measures;let i = index">
+        <div class="col">
+            <input type="text" class="form-control" disabled [(ngModel)]="m.id">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.date">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.value">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.units">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.type">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.sensor">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="m.author">
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success m-1" (click)="saveMeasure(m)">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn-danger m-1" (click)="removeMeasure(m)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</div>

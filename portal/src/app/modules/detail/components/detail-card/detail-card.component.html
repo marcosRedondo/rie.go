@@ -1,0 +1,18 @@
+<div class="card text-center">
+    <div class="card-header d-flex flex-row bg-primary align-content-center">
+        <h6 class="mr-auto text-white font-weight-bold">{{date}} - {{type.name}}</h6>
+        <button type="button" class="ml-1 btn btn-light" [ngClass]="{'active' : view =='table'}" (click)="changeView('table')">
+            <i class="fa fa-table" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="ml-1 btn btn-light" disabled [ngClass]="{'active' : view =='chart'}"  (click)="changeView('chart')">
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="ml-1 btn btn-light"   (click)="expand = !expand">
+            <i class="fa" aria-hidden="true" [ngClass]="{'fa-expand' : !expand, 'fa-compress': expand}"></i>
+        </button>
+    </div>
+    <div class="card-body" *ngIf="expand">
+        <detail-table-temperature [measures] = "measures" *ngIf="view == 'table'"></detail-table-temperature>
+        <detail-chart-temerature   *ngIf="view == 'chart'"></detail-chart-temerature>
+    </div>
+</div>
