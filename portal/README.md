@@ -2,6 +2,7 @@
 This is the frontend app of "rie.go" api. 
 
 # Tareas a realizar:
+- coger la url de la api de host
 - Hacer la pagina de medidas operativa
     - Añadir
     - Editar
